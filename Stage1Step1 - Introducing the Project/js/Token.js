@@ -12,8 +12,7 @@ class Token {
         token.setAttribute('class', 'token')
         token.style.backgroundColor = this.owner.color;
     }
-    get htmlToken(){
-        return this;
-
+    get htmlToken() {
+        return document.getElementById(this.id);
     }
 }

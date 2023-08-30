@@ -11,7 +11,12 @@ class Game {
         return [player1, player2]
     }
     startGame(){
+        this.board.drawHTMLBoard();
+        this.activePlayer.activeToken.drawHTMLToken();
+        this.ready = true;
 
+
+        this.ready = true;
     }
     get activePlayer(){
         return this.players.find((player) => player.active = true);
