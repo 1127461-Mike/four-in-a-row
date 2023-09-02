@@ -10,6 +10,6 @@ beginGameButton.addEventListener('click', function (){
     document.getElementById('play-area').style.opacity = '1';
 
 });
-document.addEventListener('keydown',function(e){
-    game.handleKeyDown(e);
+document.addEventListener('keydown',function(event){
+    game.handleKeyDown(event);
 })

@@ -10,27 +10,36 @@ class Game {
         const player2 = new Player("Player 2", 2, "#e59a13");
         return [player1, player2]
     }
+
     startGame(){
         this.board.drawHTMLBoard();
         this.activePlayer.activeToken.drawHTMLToken();
         this.ready = true;
     }
+
     get activePlayer(){
         return this.players.find((player) => player.active = true);
     }
-    handleKeyDown(e){
-        if(this.ready) {
-            e = e || window.event;
 
-            if (e.keyCode == '38') {
-                // up arrow
-            } else if (e.keyCode == '40') {
-                // down arrow
-                console.log('test')
-            } else if (e.keyCode == '37') {
-                // left arrow
-            } else if (e.keyCode == '39') {
-                // right arrow
+    handleKeyDown(event){
+        if(this.ready) {
+            let movableToken = this.activePlayer.activeToken;;
+            switch (event.key) {
+                case "ArrowLeft":
+                    // Left pressed
+                    movableToken.moveLeft();
+                    break;
+                case "ArrowRight":
+                    // Right pressed
+                    movableToken.moveRight(this.board.columns);
+                    break;
+                case "ArrowUp":
+                    // Up pressed
+                    break;
+                case "ArrowDown":
+                    // Down pressed
+                    console.log('test')
+                    break;
             }
         }
     }

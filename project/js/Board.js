@@ -10,9 +10,9 @@ class Board{
             const column = [];
             for (let y = 0; y < this.rows; y++) {
                 const space = new Space(x, y);
-                column.push(space)
+                column.push(space);
             }
-            spaces.push(column)
+            spaces.push(column);
         }
         return spaces;
     }
